@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+        
+        :root{
+            --orange:#ffa500;
+        }
+        
+        *{
+            font-family: "Nunito", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            transition: all .2s linear;
+        }
+        
+        *::selection{
+            background: var(--orange);
+            color: aliceblue;
+        }
+        
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 6rem;
+            scroll-behavior: smooth;
+        }
+        
+        section{
+            padding: 2rem 9%;
+        }
+        
+        .heading{
+            text-align: center;
+            padding: 2.5rem 0;
+            text-transform: uppercase;
+        }
+        
+        .heading span{
+            font-size: 3.5rem;
+            background: #ebe5e5;
+            color: #ffa500;
+            border-radius: 0.5rem;
+            padding: 0.2rem 1rem;
+            /* display: inline-block; */
+        }
+        
+        .heading span.space{
+            background: none;
+        }
+        
+         
+        
+        .btn{
+            display: inline-block;
+            margin-top: 1rem;
+            background: #ffa500;
+            padding: 0.7rem 3rem;
+            border: 0.5rem solid #ffa500;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.7rem;
+        }
+        
+        .btn:hover{
+            background: #e4c6c6;
+            color: #ffa500;
+        }
+        
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #333;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 9%;
+        }
+        
+        header .logo{
+            font-size: 2.5rem;
+            font-weight: bolder;
+            color: aliceblue;
+            text-transform: uppercase;
+        }
+        
+        header .logo span{
+            color: #ffa500;
+        }
+        
+        header .navbar a{
+            color: aliceblue;
+            font-size: 2rem;
+            margin: 0.8rem;
+        }
+        
+        header .navbar a:hover{
+            color: #ffa500;
+        }
+        
+        header .icons i{
+            font-size: 2.5rem;
+            color: aliceblue;
+            cursor: pointer;
+            margin-right: 2rem;
+        }
+        
+        header .icons i:hover{
+            color: #ffa500;
+        }
+        
+        header .search-bar-container{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            background: #333;
+            border-top: 0.1rem solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            z-index: 1001;
+            clip-path: polygon(0 0,100% 0, 100% 0,0 0);
+        }
+        
+        header .search-bar-container.active{
+            clip-path: polygon(0 0,100% 0, 100% 100%,0 100%);
+        }
+        
+        header .search-bar-container #search-bar{
+            width: 100%;
+            padding: 1rem;
+            text-transform: none;
+            color: #333;
+            font-size: 1.7rem;
+            border-radius: 0.5rem;
+        }
+        
+        header .search-bar-container label{
+            color: #fff;
+            cursor: pointer;
+            font-size: 3rem;
+            margin-left: 1.5rem;
+        }
+        
+        header .search-bar-container label:hover{
+            color: #ffa500;
+        }
+
+
+
+
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        
+        .testimonials{
+            padding: 40px 0;
+            /* background-color: #f1e7e7; */
+            text-align: center;
+        }
+
+        .inner{
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        .border{
+            width: 160px;
+            height: 5px;
+            background: orange;
+            margin: 26px auto;
+        }
+
+        .row{
+            display: flex;
+             flex-wrap: wrap;
+            justify-content: center; 
+        }
+ 
+         .col{
+            flex: 33.33%;
+            max-width: 33.33%;
+            box-sizing: border-box;
+            padding: 15px;
+        }  
+
+        .testimonial{
+           
+            padding: 30px;
+        }
+
+        .testimonial img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .name{
+            font-size: 20px;
+            text-transform: uppercase;
+            margin: 20px 0;
+        }
+
+
+
+
+        @media screen and (max-width:960px) {
+            .col{
+                flex: 100%;
+                max-width: 80%;
+            }
+        }
+
+
+        @media screen and (max-width:600px) {
+            .col{
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+    </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <a href="home.html" class="logo"><span>Shopping</span></a>
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="gallary.html">Gallery</a>
+            <a href="review.html">Review</a>
+            <a href="contact1.html">Conact us</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+           
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search"  id="search-bar" placeholder="search here......">
+            <label for="search-bar" class="fa fa-search"></label>
+        </form>
+    </header>
+
+    <br><br><br><br>
+
+
+
+
+
+    <div class="testimonials">
+        <div class="inner">
+            <h1>Review</h1>
+            <div class="border"></div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="testimonial">
+                        <img src="img/w1.jpg" alt="">
+                        <div class="name">Emily</div>
+                        <div class="stars"></div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, sit, quae sequi maiores modi est dolor quisquam eaque,</p>
+                </div>
+           
+
+            
+            <div class="col">
+                <div class="testimonial">
+                    <img src="img/w2.jpg" alt="">
+                    <div class="name">Mary</div>
+                    <div class="stars"></div>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, sit, quae sequi maiores modi est dolor quisquam eaque,</p>
+            </div>
+         
+
+        
+       
+        <div class="col">
+            <div class="testimonial">
+                <img src="img/w4.jpg" alt="">
+                <div class="name">Luna</div>
+                <div class="stars"></div>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, sit, quae sequi maiores modi est dolor quisquam eaque,</p>
+        </div>
+
+      </div>
+
+
+           
+    </div>
+    </div>
+
+
+
+    <script>
+        let searchBtn=document.querySelector("#search-btn");
+let searchBar=document.querySelector(".search-bar-container");
+let menu=document.querySelector("#menu-bar");
+let navbar=document.querySelector(".navbar");
+
+window.onscroll = () =>{
+    searchBtn.classList.remove("fa-times");
+    searchBar.classList.remove("active");
+    menu.classList.remove("fa-times");
+    navbar.classList.remove("active");
+    // loginForm.classList.remove("active");
+}
+
+searchBtn.addEventListener("click", () =>{
+    searchBtn.classList.toggle("fa-times");
+    searchBar.classList.toggle("active");
+});
+
+menu.addEventListener("click", () =>{
+    menu.classList.toggle("fa-times");
+    navbar.classList.toggle("active");
+});
+    </script>
+    
+</body>
+</html>
